@@ -1,21 +1,18 @@
 import axios from "axios"
-
-const BASE_URL = ""
-const headers = {} 
-
-// add above variables in common config file
+import Apis from "../utils/api_config"
+import headers from "../utils/headers"
 
 export const getPendingRequests = async (payer: string, token: string): Promise<any[]> => {
     const req = await axios({
-        url: `${BASE_URL}/transaction-request`,
+        url: Apis.wPaymentRequestEndpoint,
         method: "GET",
         params: {
             payer
         },
-        headers: {
-            ...headers,
-            "Authorization": `Bearer ${token}`
-        }
+        // headers: {
+        //     ...headers,
+        //     "Authorization": `Bearer ${token}`
+        // }
     })
 
     const res = await req.data
