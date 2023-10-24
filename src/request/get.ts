@@ -1,6 +1,5 @@
 import axios from "axios"
 import Apis from "../utils/api_config"
-import headers from "../utils/headers"
 
 export const getPendingRequests = async (payer: string, token: string): Promise<any[]> => {
     const req = await axios({

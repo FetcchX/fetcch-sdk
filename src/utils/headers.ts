@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 
-const commonHeaders: AxiosRequestConfig = {
+const commonHeaders:AxiosRequestConfig  = {
     headers: {
     }
 };
@@ -13,5 +13,7 @@ export function initializeSdk(secretKey: string) {
     }
 }
 
+
 export default commonHeaders;
+
 
