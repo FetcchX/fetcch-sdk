@@ -10,8 +10,8 @@ export const Transaction = z.object({
 
 export const ExecutionData = z.object({
     hash: z.string(),
-    chain:z.string(),
-    timestamp:z.number(),
+    chain: z.string(),
+    timestamp: z.number(),
 });
 
 export const messageSchema = z.object({
@@ -22,39 +22,60 @@ export const messageSchema = z.object({
             transaction: Transaction,
         }).optional(),
         z.object({
-            executionData:ExecutionData,
+            executionData: ExecutionData,
         }).optional(),
         z.object({
-            type:z.string(),
-            data:paymentIntent
+            type: z.string(),
+            data: paymentIntent
         }).optional(),
         z.object({
-            executionData:ExecutionData,
+            executionData: ExecutionData,
         }).optional(),
-       ])
-       ),
-       message:z.string(),
-       label:z.string(),
+    ])
+    ),
+    message: z.string(),
+    label: z.string(),
 })
 
 export const requestSchema = z.object({
-   payer: z.string(),
-   receiver: z.string(),
-   actios: z.array(z.union([
-    z.object({
-        transaction: Transaction,
-    }).optional(),
-    z.object({
-        type:z.string(),
-        data:paymentIntent
-    }).optional(),
-   ])
-   ),
-   message:z.string(),
-   label:z.string(),
-   signature:z.string(),
+    payer: z.string(),
+    receiver: z.string(),
+    actios: z.array(z.union([
+        z.object({
+            transaction: Transaction,
+        }).optional(),
+        z.object({
+            type: z.string(),
+            data: paymentIntent
+        }).optional(),
+    ])
+    ),
+    message: z.string(),
+    label: z.string(),
+    signature: z.string(),
 })
+
+export const updateRequestSchema = z.object({
+    id: z.number(),
+    actions: z.array(z.union([
+        z.object({
+            transaction: Transaction,
+        }).optional(),
+        z.object({
+            executionData: ExecutionData,
+        }).optional(),
+        z.object({
+            type: z.string(),
+            data: paymentIntent
+        }).optional(),
+    ]),
+        z.object({
+            executionData: ExecutionData,
+        }).optional(),
+    ),    
+});
 
 export type Request = z.infer<typeof requestSchema>
 export type MessageSchema = z.infer<typeof messageSchema>
+export type UpdateRequestSchema = z.infer<typeof updateRequestSchema>
 export * from "./request-intent-types"
