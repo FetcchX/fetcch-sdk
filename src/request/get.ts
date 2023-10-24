@@ -1,17 +1,15 @@
 import axios from "axios"
 import Apis from "../utils/api_config"
 
-export const getPendingRequests = async (payer: string, token: string): Promise<any[]> => {
+export const getPendingRequests = async (id: string, token: string): Promise<any[]> => {
     const req = await axios({
-        url: Apis.wPaymentRequestEndpoint,
+        url: `${Apis.wPaymentRequestEndpoint}?id=${id}`,
         method: "GET",
-        params: {
-            payer
-        },
-        // headers: {
+      
+        headers: {
         //     ...headers,
-        //     "Authorization": `Bearer ${token}`
-        // }
+       
+        }
     })
 
     const res = await req.data

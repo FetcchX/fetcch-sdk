@@ -1,10 +1,10 @@
 import axios from "axios";
 import Apis from "../utils/api_config";
-import {identitySchema} from "../types/identity";
+import {addressbookMessageSchema} from "../types/address-book/index";
 
-export const createIdentity = async (data: identitySchema): Promise<any[]> => {
+export const generateAddressBookMessage = async (data: addressbookMessageSchema): Promise<any> => {
     const req = await axios({
-        url: Apis.wGetIdentityEndpoint,
+        url: `${Apis.wAddressBookGenerateMessageEndpoint}`,
         method: "POST",
         headers: {
             // ...headers,
@@ -15,4 +15,4 @@ export const createIdentity = async (data: identitySchema): Promise<any[]> => {
     const res = await req.data
 
     return res.data
-}
+};

@@ -1,9 +1,9 @@
-import Apis from "../utils/api_config";
 import axios from "axios";
+import Apis from "../utils/api_config";
 
-export const getIdentity = async (id: string): Promise<any[]> => {
+export const getCircles = async (owner: string): Promise<any[]> => {
     const req = await axios({
-        url: `${Apis.wGetIdentityEndpoint}?id=${id}`,
+        url: `${Apis.wAddressBookEndpoint}?owner=${owner}`,
         method: "GET",
         headers: {
         //     ...headers,
@@ -13,4 +13,4 @@ export const getIdentity = async (id: string): Promise<any[]> => {
     const res = await req.data
 
     return res.data
-}
+};
