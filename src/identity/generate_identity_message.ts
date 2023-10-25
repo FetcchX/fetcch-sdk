@@ -1,19 +1,19 @@
 import axios from "axios";
 import Apis from "../utils/api_config";
-import {generateIdentityMessageSchema} from "../types/identity";
+import { generateIdentityMessageSchema } from "../types/identity";
+import { getSecretKey } from "..";
 
-export const generateIdentityMessage = async (data: generateIdentityMessageSchema,secret:string): Promise<any[]> => {
+export const generateIdentityMessage = async (data: generateIdentityMessageSchema): Promise<any[]> => {
+
     const req = await axios({
         url: Apis.wIdentityGenerateMessageEndpoint,
         method: "POST",
         headers: {
-            "secret-key":secret
-            // ...headers,
+            "secret-key": getSecretKey()
         },
         data
     })
 
-    const res = await req.data
-
-    return res.data
+    const res = await req.data;
+    return res.data;
 }

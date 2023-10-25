@@ -22,7 +22,6 @@ test("generateIdentityMessage", async () => {
                 }
             ]
         },
-        "secret-key"        
     )
     expect(message).toBeDefined()
 });

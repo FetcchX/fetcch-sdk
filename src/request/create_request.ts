@@ -1,3 +1,4 @@
+import { getSecretKey } from ".."
 import { Request } from "../types/request"
 import Apis from "../utils/api_config"
 import axios from "axios"
@@ -7,7 +8,7 @@ export const CreateRequest = async (data: Request): Promise<any[]> => {
         url: Apis.wPaymentRequestEndpoint,
         method: "POST",
         headers: {
-            // ...headers,
+            "secret-key":getSecretKey()
         },
         data
     })
