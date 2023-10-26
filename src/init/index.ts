@@ -7,7 +7,7 @@ import { getSecretKey } from ".."
 
 export default function checker() {
     if (getSecretKey() === null) {
-        return null;
+        return 'Please initialise the SDK with your secret key';
     } else {
         return {
             request,

@@ -1,9 +1,9 @@
 import axios from "axios";
 import Apis from "../utils/api_config";
 import { getSecretKey } from "..";
-import { BuildPaymentSchema } from "../types/payments";
+import { Actions } from "../types/request";
 
-export const buildDryTransaction = async (data: BuildPaymentSchema): Promise<any[]> => {
+export const buildDry = async (data: Actions): Promise<any[]> => {
     const req = await axios({
         url: Apis.wDryBuildTransactionEndpoint,
         method: "POST",

@@ -26,5 +26,8 @@ export default class Apis {
     static wGenerateAuthenticationMessageEndpoint: string = `${Apis.baseURL}authentication/generate-message`;
     static wAuthenticationEndpoint: string = `${Apis.baseURL}authentication/`;
 
+    // Provider
+    static wProviderEndpoint: string = `${Apis.baseURL}provider`;
+
   }
   

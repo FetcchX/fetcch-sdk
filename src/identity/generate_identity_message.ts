@@ -3,7 +3,7 @@ import Apis from "../utils/api_config";
 import { generateIdentityMessageSchema } from "../types/identity";
 import { getSecretKey } from "..";
 
-export const generateIdentityMessage = async (data: generateIdentityMessageSchema): Promise<any[]> => {
+export const generateMessage = async (data: generateIdentityMessageSchema): Promise<any[]> => {
 
     const req = await axios({
         url: Apis.wIdentityGenerateMessageEndpoint,

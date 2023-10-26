@@ -3,7 +3,7 @@ import axios from "axios";
 import {updateAddressbookSchemaType} from "../types/address-book/index";
 import { getSecretKey } from "..";
 
-export const updateAddressbook = async (data: updateAddressbookSchemaType): Promise<any> => {
+export const update = async (data: updateAddressbookSchemaType): Promise<any> => {
     const req = await axios({
         url: Apis.wAddressBookEndpoint,
         method: "PATCH",

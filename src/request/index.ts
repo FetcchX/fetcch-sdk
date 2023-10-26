@@ -1,11 +1,11 @@
-import { getPendingRequests } from './get'
-import { createRequest } from './create_request'
+import { get } from './get'
+import { create } from './create_request'
 import { generateMessage } from './generate_message'
-import { updateRequest } from './update_request'
+import { update } from './update_request'
 
 export default {
-    getPendingRequests,
-    createRequest,
+    get,
+    create,
     generateMessage,
-    updateRequest
+    update
 }

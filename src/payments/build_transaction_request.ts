@@ -1,9 +1,9 @@
-import {BuildTransactionRequestSchema} from '../types/payments/index';
 import {getSecretKey} from '..';
 import axios from 'axios';
 import Apis from '../utils/api_config';
+import { Actions } from '../types/request';
 
-export const buildTransactionRequest = async (data: BuildTransactionRequestSchema): Promise<any[]> => {
+export const build = async (data: Actions): Promise<any[]> => {
     const req = await axios({
         url: Apis.wBuildTransactionEndpoint,
         method: 'POST',

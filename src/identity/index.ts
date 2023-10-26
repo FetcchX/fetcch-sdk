@@ -1,9 +1,9 @@
-import {getIdentity} from "./get";
-import {createIdentity} from "./create_identity";
-import {generateIdentityMessage} from "./generate_identity_message";
+import {get} from "./get";
+import {create} from "./create_identity";
+import {generateMessage} from "./generate_identity_message";
 
 export default {
-    getIdentity,
-    createIdentity,
-    generateIdentityMessage
+    get,
+    create,
+    generateMessage
 }

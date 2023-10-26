@@ -1,4 +1,4 @@
-import { MessageSchema } from "../types";
+import { MessageSchema } from '../types/request/index';
 import axios from "axios";
 import Apis from "../utils/api_config";
 import { getSecretKey } from "..";

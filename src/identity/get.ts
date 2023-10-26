@@ -2,7 +2,7 @@ import { getSecretKey } from "..";
 import Apis from "../utils/api_config";
 import axios from "axios";
 
-export const getIdentity = async (id: string): Promise<any[]> => {
+export const get = async (id: string): Promise<any[]> => {
     const req = await axios({
         url: `${Apis.wGetIdentityEndpoint}?id=${id}`,
         method: "GET",
