@@ -1,4 +1,4 @@
-import Apis from "../utils/api_config";
+import Apis from "../utils/api-config";
 import axios from "axios";
 import {updateAddressbookSchemaType} from "../types/address-book/index";
 import { getSecretKey } from "..";

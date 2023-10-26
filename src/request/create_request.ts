@@ -1,6 +1,6 @@
 import { getSecretKey } from ".."
 import { Request } from "../types/request"
-import Apis from "../utils/api_config"
+import Apis from "../utils/api-config"
 import axios from "axios"
 
 export const create = async (data: Request): Promise<any[]> => {

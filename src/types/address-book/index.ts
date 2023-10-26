@@ -6,8 +6,8 @@ export const addresses = z.object({
     chainType: z.string(),
 });
 
-export const identity = z.object({
-    identity: z.string(),
+export const addressBookIdentity = z.object({
+    addressBookIdentity: z.string(),
     name: z.string(),
 });
 
@@ -15,7 +15,7 @@ export const addressbookGenerateMessage = z.object({
     id: z.string(),
     name: z.string(),
     addresses: z.array(addresses).optional(),
-    identities: z.array(identity).optional(),
+    identities: z.array(addressBookIdentity).optional(),
     owner: z.string(),
 });
 
@@ -23,7 +23,7 @@ export const addressbookGenerateMessage = z.object({
 export const addressbookSchema = z.object({
     name: z.string(),
     addresses: z.array(addresses).optional(),
-    identities: z.array(identity).optional(),
+    identities: z.array(addressBookIdentity).optional(),
     owner: z.string(),
     signature: z.string(),
 });
@@ -32,7 +32,7 @@ export const updateAddressbookSchema = z.object({
     id: z.string(),
     name: z.string(),
     addresses: z.array(addresses).optional(),
-    identities: z.array(identity).optional(),
+    identities: z.array(addressBookIdentity).optional(),
     owner: z.string(),
     signature: z.string(),
 });

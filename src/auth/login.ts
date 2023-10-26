@@ -1,4 +1,4 @@
-import Apis from "../utils/api_config";
+import Apis from "../utils/api-config";
 import axios from "axios";
 import { AuthSchema } from "../types/auth";
 

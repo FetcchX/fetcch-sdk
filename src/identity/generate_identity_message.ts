@@ -1,5 +1,5 @@
 import axios from "axios";
-import Apis from "../utils/api_config";
+import Apis from "../utils/api-config";
 import { generateIdentityMessageSchema } from "../types/identity";
 import { getSecretKey } from "..";
 

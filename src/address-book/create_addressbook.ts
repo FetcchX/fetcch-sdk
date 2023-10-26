@@ -1,5 +1,5 @@
 import axios from "axios";
-import Apis from "../utils/api_config";
+import Apis from "../utils/api-config";
 import {addressbookMessageSchema} from "../types/address-book/index";
 import { getSecretKey } from "..";
 

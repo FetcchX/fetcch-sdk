@@ -1,15 +1,13 @@
-import {getSecretKey} from '..';
 import axios from 'axios';
-import Apis from '../utils/api_config';
+import Apis from '../utils/api-config';
 import { Actions } from '../types/request';
+import { Headers } from '../types';
 
-export const build = async (data: Actions): Promise<any[]> => {
+export const _buildTransaction = async (data: Actions, headers: Headers): Promise<any[]> => {
     const req = await axios({
         url: Apis.wBuildTransactionEndpoint,
         method: 'POST',
-        headers: {
-            'secret-key': getSecretKey()
-        },
+        headers: headers,
         data
     })
 

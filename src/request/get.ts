@@ -1,5 +1,5 @@
 import axios from "axios"
-import Apis from "../utils/api_config"
+import Apis from "../utils/api-config"
 import { getSecretKey } from ".."
 
 export const get = async (id: string): Promise<any[]> => {

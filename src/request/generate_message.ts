@@ -1,6 +1,6 @@
 import { MessageSchema } from '../types/request/index';
 import axios from "axios";
-import Apis from "../utils/api_config";
+import Apis from "../utils/api-config";
 import { getSecretKey } from "..";
 
 export const generateMessage = async (data: MessageSchema): Promise<any[]> => {

@@ -1,33 +1,27 @@
-import checker from "./init";
-import Apis from "./utils/api_config";
 import request from "./request";
 import identity from "./identity";
-import payments from "./payments";
+import Payments from "./payments";
 import addressBook from "./address-book";
+import { Headers, headersSchema } from "./types";
 
-let secretKey:string | null = "4ff9ecc8-4537-4e2e-950d-0cefbd16f2a5";
-
-export function initialise(key:string) {
-  secretKey = key;
-}
-
-export function getSecretKey() {
-  return secretKey;
-}
-
-class Fetcch {
+export default class Fetcch {
   secretKey: string;
   request = request;
+  identity = identity;
+  payments: Payments;
+  addressBook = addressBook;
+
+  private headers: Headers
   
   constructor(secretKey: string) {
     this.secretKey = secretKey;
   
+    // check validity of secretKey
 
+    this.headers = headersSchema.parse({
+      "secret-key": secretKey
+    })
+
+    this.payments = new Payments(this.headers)
   }
-}
-
-
-export default {
-	initialise,
-	checker,
 }

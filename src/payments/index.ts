@@ -1,8 +1,19 @@
-import { build } from "./build_transaction_request";
-import {buildDry} from "./dry_build_transaction";
+import { Actions, Headers } from "../types";
+import { _buildTransaction } from "./build-transaction-request";
+import { _buildDryTransaction } from "./dry-build-transaction";
 
+export default class Payments {
+    private headers: Headers
+    
+    constructor(headers: Headers) {
+        this.headers = headers
+    }
 
-export default{
-    build,
-    buildDry,   
+    buildTransaction(actions: Actions) {
+        return _buildTransaction(actions, this.headers)
+    }
+
+    dryBuildTransaction(actions: Actions) {
+        return _buildDryTransaction(actions, this.headers)
+    }
 }
