@@ -2,6 +2,7 @@ import request from "../request"
 import addressBook from "../address-book"
 import identity from "../identity"
 import utils from "../utils"
+import payments from "../payments"
 import { getSecretKey } from ".."
 
 export default function checker() {
@@ -12,7 +13,8 @@ export default function checker() {
             request,
             addressBook,
             identity,
-            utils
+            utils,
+            payments
         }
     }
 }
