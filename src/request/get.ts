@@ -1,20 +1,13 @@
 import axios from "axios"
+import Apis from "../utils/api_config"
+import { getSecretKey } from ".."
 
-const BASE_URL = ""
-const headers = {} 
-
-// add above variables in common config file
-
-export const getPendingRequests = async (payer: string, token: string): Promise<any[]> => {
+export const get = async (id: string): Promise<any[]> => {
     const req = await axios({
-        url: `${BASE_URL}/transaction-request`,
-        method: "GET",
-        params: {
-            payer
-        },
+        url: `${Apis.wPaymentRequestEndpoint}?id=${id}`,
+        method: "GET", 
         headers: {
-            ...headers,
-            "Authorization": `Bearer ${token}`
+            "secret-key": getSecretKey()
         }
     })
 
