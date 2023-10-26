@@ -1,14 +1,12 @@
 import axios from "axios"
 import Apis from "../utils/api-config"
-import { getSecretKey } from ".."
+import { Headers } from "../types"
 
-export const get = async (id: string): Promise<any[]> => {
+export const get = async (id: string, headers: Headers): Promise<any[]> => {
     const req = await axios({
         url: `${Apis.wPaymentRequestEndpoint}?id=${id}`,
         method: "GET", 
-        headers: {
-            "secret-key": getSecretKey()
-        }
+        headers: headers
     })
 
     const res = await req.data
