@@ -1,19 +1,17 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
 import {addressbookMessageSchema} from "../types/address-book/index";
-import { getSecretKey } from "..";
+import { Headers } from "../types";
 
-export const create = async (data: addressbookMessageSchema): Promise<any> => {
+export const _generateMessage = async (data: addressbookMessageSchema, headers: Headers): Promise<any> => {
     const req = await axios({
-        url: `${Apis.wAddressBookEndpoint}`,
+        url: `${Apis.wAddressBookGenerateMessageEndpoint}`,
         method: "POST",
-        headers: {
-            "secret-key": getSecretKey()
-        },
+        headers: headers,
         data
     })
 
     const res = await req.data
 
     return res.data
-}
+};

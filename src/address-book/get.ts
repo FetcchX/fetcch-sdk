@@ -1,14 +1,12 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
-import { getSecretKey } from "..";
+import { Headers } from "../types";
 
-export const get = async (owner: string): Promise<any[]> => {
+export const _get = async (owner: string, headers:Headers): Promise<any[]> => {
     const req = await axios({
         url: `${Apis.wAddressBookEndpoint}?owner=${owner}`,
         method: "GET",
-        headers: {
-            "secret-key": getSecretKey()
-        }
+        headers: headers,
     })
 
     const res = await req.data
