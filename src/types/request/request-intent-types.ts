@@ -8,6 +8,9 @@ export const paymentIntent = z.object({
         amount: z.string(),
         currency: z.enum(["USD", "INR", "CRYPTO"])
     }),
+    payer: z.string().optional(),
+    fromToken: z.string().optional(),
+    fromChain: z.number().optional()
 })
 
 export const nftIntent = z.object({
