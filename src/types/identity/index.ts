@@ -27,5 +27,5 @@ export const generateMessage = z.object({
     secondary: z.array(addressConfig).optional(),
 });
 
-export type generateIdentityMessageSchema = z.infer<typeof generateMessage>;
-export type identitySchema = z.infer<typeof identity>;
+export type GenerateIdentityMessage = z.infer<typeof generateMessage>;
+export type Identity = z.infer<typeof identity>;

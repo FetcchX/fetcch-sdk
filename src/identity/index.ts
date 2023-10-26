@@ -1,8 +1,8 @@
 import {_get} from "./get";
-import {_generateMessage} from "./generate-identity-message";
-import {_create} from "./create-identity";
+import {_generateMessage} from "./generate-message";
+import {_create} from "./create";
 import { Headers } from '../types';
-import {generateIdentityMessageSchema, identitySchema} from "../types/identity";
+import {GenerateIdentityMessage, Identity} from "../types/identity";
 export default class identity {
  
     private headers: Headers
@@ -15,11 +15,11 @@ export default class identity {
         return _get(id, this.headers)
     }
 
-    generateMessage(data: generateIdentityMessageSchema) {
+    generateMessage(data: GenerateIdentityMessage) {
         return _generateMessage(data, this.headers)
     }
 
-    create(data: identitySchema) {
+    create(data: Identity) {
         return _create(data,this.headers)
     }
 }

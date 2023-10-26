@@ -10,4 +10,4 @@ export const authSchema = z.object({
     timestamp: z.number(),
 });
 
-export type AuthSchema = z.infer<typeof authSchema>
+export type Authentication = z.infer<typeof authSchema>

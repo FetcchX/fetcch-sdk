@@ -1,9 +1,9 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
-import { generateIdentityMessageSchema } from "../types/identity";
+import { GenerateIdentityMessage } from "../types/identity";
 import { Headers } from "../types";
 
-export const _generateMessage = async (data: generateIdentityMessageSchema, headers: Headers): Promise<any[]> => {
+export const _generateMessage = async (data: GenerateIdentityMessage, headers: Headers): Promise<any[]> => {
 
     const req = await axios({
         url: Apis.wIdentityGenerateMessageEndpoint,

@@ -56,9 +56,9 @@ export const MessageSchema = z.object({
     label: z.string(),
 })
 
-export type RequestSchema = z.input<typeof requestSchema>
+export type PaymentRequest = z.input<typeof requestSchema>
 export type Actions = z.input<typeof actionsSchema>
-export type UpdateRequestSchema = z.input<typeof updateRequestSchema>
-export type MessageSchema = z.input<typeof MessageSchema>
+export type UpdateRequest = z.input<typeof updateRequestSchema>
+export type GenerateMessage = z.input<typeof MessageSchema>
 
 export * from "./request-intent-types"

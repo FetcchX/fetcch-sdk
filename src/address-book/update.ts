@@ -1,9 +1,9 @@
 import Apis from "../utils/api-config";
 import axios from "axios";
-import {updateAddressbookSchemaType} from "../types/address-book/index";
+import {UpdateAddressbook} from "../types/address-book/index";
 import { Headers } from "../types";
 
-export const _update = async (data: updateAddressbookSchemaType, headers:Headers): Promise<any> => {
+export const _update = async (data: UpdateAddressbook, headers:Headers): Promise<any> => {
     const req = await axios({
         url: Apis.wAddressBookEndpoint,
         method: "PATCH",

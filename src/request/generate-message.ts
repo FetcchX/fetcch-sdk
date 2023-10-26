@@ -1,9 +1,9 @@
-import { MessageSchema } from '../types/request/index';
+import { GenerateMessage } from '../types/request/index';
 import axios from "axios";
 import Apis from "../utils/api-config";
 import { Headers } from '../types';
 
-export const _generateMessage = async (data: MessageSchema, headers:Headers): Promise<any[]> => {
+export const _generateMessage = async (data: GenerateMessage, headers:Headers): Promise<any[]> => {
     const req = await axios({
         url: Apis.wPaymentRequestGenerateMessageEndpoint,
         method: "POST",

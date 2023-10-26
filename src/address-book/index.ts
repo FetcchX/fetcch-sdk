@@ -1,8 +1,8 @@
 import {_get} from './get';
-import {_generateMessage} from './addressbook-generate-message';
-import {_create} from './create-addressbook';
-import {_update} from './update-addressbook';
-import {addressbookMessageSchema, updateAddressbookSchemaType,addressbookSchemaType} from "../types/address-book/index";
+import {_generateMessage} from './generate-message';
+import {_create} from './create';
+import {_update} from './update';
+import {UpdateAddressbook, AddressBook, AddressbookMessage, } from "../types/address-book/index";
 import { Headers } from '../types';
 export default class Addressbook{
     private headers: Headers
@@ -15,11 +15,15 @@ export default class Addressbook{
         return _get(owner, this.headers)
     }
 
-    generateMessage(data: addressbookMessageSchema) {
+    generateMessage(data: AddressbookMessage) {
         return _generateMessage(data, this.headers)
     }
 
-    create(data: addressbookSchemaType) {
+    create(data: AddressBook) {
         return _create(data,this.headers)
+    }
+
+    update(data: UpdateAddressbook) {
+        return _update(data, this.headers)
     }
 }

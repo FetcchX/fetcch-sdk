@@ -1,6 +1,6 @@
 import { _login } from "./login";
 import { _generateMessage } from "./login-message";
-import { AuthSchema, Headers } from "../types";
+import { Authentication, Headers } from "../types";
 
 export default class Auth {
     private headers: Headers
@@ -9,7 +9,7 @@ export default class Auth {
         this.headers = headers
     }
 
-    login(actions: AuthSchema) {
+    login(actions: Authentication) {
         return _login(actions,this.headers)
     }
 

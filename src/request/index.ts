@@ -1,9 +1,9 @@
 import { _get } from './get'
-import { _create } from './create-request'
+import { _create } from './create'
 import { _generateMessage } from './generate-message'
-import { _update } from './update-request'
+import { _update } from './update'
 import {Headers} from '../types'
-import {RequestSchema, MessageSchema, UpdateRequestSchema} from '../types/request/index'
+import {PaymentRequest, UpdateRequest, GenerateMessage} from '../types/request/index'
 export default class Request {
     private headers: Headers
     
@@ -15,15 +15,15 @@ export default class Request {
         return _get(requestId, this.headers)
     }
 
-    create(data: RequestSchema) {
+    create(data: PaymentRequest) {
         return _create(data, this.headers)
     }
 
-    generateMessage(data: MessageSchema) {
+    generateMessage(data: GenerateMessage) {
         return _generateMessage(data, this.headers)
     }
 
-    update(data: UpdateRequestSchema) {
+    update(data: UpdateRequest) {
         return _update(data, this.headers)
     }
 }
