@@ -1,6 +1,6 @@
 # fetcch.ts
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://github.com/fetcchx/fetcch-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/fetcchx/fetcch-sdk/actions)
 
 Fetcch is the first pull payments layer for blockchain, this SDK will enable anyone to
 
