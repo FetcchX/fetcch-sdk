@@ -3,7 +3,7 @@ import axios from "axios";
 import Apis from "../utils/api_config";
 import { getSecretKey } from "..";
 
-export const UpdateRequest = async (body: UpdateRequestSchema): Promise<any[]> => {
+export const updateRequest = async (body: UpdateRequestSchema): Promise<any[]> => {
     const req = await axios({
         url: Apis.wPaymentRequestEndpoint,
         method: "PATCH",

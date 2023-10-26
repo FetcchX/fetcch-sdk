@@ -1,6 +1,11 @@
-export * from './get_circle';
-export * from './addressbook_generate_message';
-export * from './create_addressbook';
-export * from './update_addressbook';
+import {getCircles} from './get_circle';
+import {generateAddressBookMessage} from './addressbook_generate_message';
+import {createAddressbook} from './create_addressbook';
+import {updateAddressbook} from './update_addressbook';
 
-export default {}
+export default {
+    getCircles,
+    generateAddressBookMessage,
+    createAddressbook,
+    updateAddressbook
+}

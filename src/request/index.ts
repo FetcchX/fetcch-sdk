@@ -1,7 +1,11 @@
-export * from './get'
-export * from './create_request'
-export * from './generate_message'
-export * from './update_request'
+import { getPendingRequests } from './get'
+import { createRequest } from './create_request'
+import { generateMessage } from './generate_message'
+import { updateRequest } from './update_request'
 
-export default{
+export default {
+    getPendingRequests,
+    createRequest,
+    generateMessage,
+    updateRequest
 }
