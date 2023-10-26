@@ -56,7 +56,6 @@ export const MessageSchema = z.object({
     label: z.string(),
 })
 
-export type Request = z.infer<typeof requestSchema>
 export type RequestSchema = z.input<typeof requestSchema>
 export type Actions = z.input<typeof actionsSchema>
 export type UpdateRequestSchema = z.input<typeof updateRequestSchema>

@@ -1,15 +1,13 @@
 import { MessageSchema } from '../types/request/index';
 import axios from "axios";
 import Apis from "../utils/api-config";
-import { getSecretKey } from "..";
+import { Headers } from '../types';
 
-export const generateMessage = async (data: MessageSchema): Promise<any[]> => {
+export const _generateMessage = async (data: MessageSchema, headers:Headers): Promise<any[]> => {
     const req = await axios({
         url: Apis.wPaymentRequestGenerateMessageEndpoint,
         method: "POST",
-        headers: {
-            "secret-key": getSecretKey()
-        },
+        headers: headers,
         data
     })
 

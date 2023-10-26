@@ -15,5 +15,11 @@ export default class Addressbook{
         return _get(owner, this.headers)
     }
 
+    generateMessage(data: addressbookMessageSchema) {
+        return _generateMessage(data, this.headers)
+    }
 
+    create(data: addressbookSchemaType) {
+        return _create(data,this.headers)
+    }
 }
