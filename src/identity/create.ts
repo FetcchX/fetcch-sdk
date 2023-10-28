@@ -1,9 +1,9 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
-import {identitySchema} from "../types/identity";
+import {IdentityIntent} from "../types/identity";
 import { Headers } from "../types";
 
-export const _create = async (data: identitySchema, headers:Headers): Promise<any[]> => {
+export const _create = async (data: IdentityIntent, headers:Headers): Promise<any[]> => {
     const req = await axios({
         url: Apis.wGetIdentityEndpoint,
         method: "POST",

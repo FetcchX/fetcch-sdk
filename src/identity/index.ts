@@ -2,8 +2,8 @@ import {_get} from "./get";
 import {_generateMessage} from "./generate-message";
 import {_create} from "./create";
 import { Headers } from '../types';
-import {GenerateIdentityMessage, Identity} from "../types/identity";
-export default class identity {
+import {GenerateIdentityMessage, IdentityIntent} from "../types/identity";
+export default class Identity {
  
     private headers: Headers
     
@@ -19,7 +19,7 @@ export default class identity {
         return _generateMessage(data, this.headers)
     }
 
-    create(data: Identity) {
+    create(data: IdentityIntent) {
         return _create(data,this.headers)
     }
 }

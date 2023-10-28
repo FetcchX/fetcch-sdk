@@ -28,4 +28,4 @@ export const generateMessage = z.object({
 });
 
 export type GenerateIdentityMessage = z.infer<typeof generateMessage>;
-export type Identity = z.infer<typeof identity>;
+export type IdentityIntent = z.infer<typeof identity>;
