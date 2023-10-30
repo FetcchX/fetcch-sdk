@@ -8,7 +8,9 @@ export const _buildTransaction = async (data: Actions, headers: Headers): Promis
         url: Apis.wBuildTransactionEndpoint,
         method: 'POST',
         headers: headers,
-        data
+        data: {
+            "actions": data
+        }
     })
 
     const res = await req.data

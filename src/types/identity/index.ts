@@ -1,4 +1,4 @@
-import {z} from "zod";
+import { z } from "zod";
 
 export const addressConfig = z.object({
     address: z.string(),
@@ -13,9 +13,9 @@ export const identity = z.object({
     provider: z.string(),
     default: addressConfig,
     secondary: z.array(addressConfig).optional(),
-    currentSignature:z.string(),
-    extraData:z.object({
-        signer:z.string(),
+    currentSignature: z.string(),
+    extraData: z.object({
+        signer: z.string(),
     }).optional(),
 });
 
@@ -27,5 +27,18 @@ export const generateMessage = z.object({
     secondary: z.array(addressConfig).optional(),
 });
 
+export const updateIdentitySchema = z.object({
+    id: z.string(),
+    identifier: z.string(),
+    provider: z.string(),
+    default: addressConfig,
+    secondary: z.array(addressConfig).optional(),
+    version: z.number(),
+    currentSignature: z.string(),
+    previousSignature: z.string(),
+});
+
+
 export type GenerateIdentityMessage = z.infer<typeof generateMessage>;
 export type IdentityIntent = z.infer<typeof identity>;
+export type UpdateIdentityIntent = z.infer<typeof updateIdentitySchema>;
