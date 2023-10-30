@@ -4,14 +4,14 @@ describe("module: update-identity", () => {
     const fetcch = new Fetcch("4ff9ecc8-4537-4e2e-950d-0cefbd16f2a5");
     test("update identity", async () => {
         const identity = await fetcch.identity.update({
-            "id": "satyam@fetcch",
-            "identifier": "satyam",
-            "provider": "fetcch",
+            "id": "rk@pay",
+            "identifier": "rk",
+            "provider": "pay",
             "default": {
-                "address": "0x1DCcc9BaF7E8d7A18f948acD467CE016044fC546",
+                "address": "0x10D98B111bee373Eef82C2ae301C867bB002A312",
                 "chain": 1,
                 "isMultisig": false,
-                "isSmartContractWallet": false
+                "isSmartContractWallet": true
             },
             "secondary": [
                 {

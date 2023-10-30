@@ -10,7 +10,7 @@ describe("module: generate-message", () => {
                 "provider": "pay",
                 "default": {
                     "address": "0x10D98B111bee373Eef82C2ae301C867bB002A312",
-                    "chain": 2,
+                    "chain": 1,
                     "isMultisig": false,
                     "isSmartContractWallet": true
                 },
@@ -22,7 +22,7 @@ describe("module: generate-message", () => {
                         "isSmartContractWallet": false
                     }
                 ]
-            }       
+            }
         )
         console.log(message);
         expect(message).toBeDefined();

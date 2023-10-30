@@ -10,7 +10,7 @@ describe("module: create-identity", () => {
             "provider": "pay",
             "default": {
                 "address": "0x10D98B111bee373Eef82C2ae301C867bB002A312",
-                "chain": 2,
+                "chain": 1,
                 "isMultisig": false,
                 "isSmartContractWallet": true
             },
@@ -28,4 +28,5 @@ describe("module: create-identity", () => {
             }
         });
         expect(ID).toBeDefined();
-    })});
+    })
+});
