@@ -1,8 +1,8 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
-import { getSecretKey } from "..";
+import { Headers } from '../types';
 
-export const generateMessage = async (owner:string): Promise<any[]> => {
+export const _generateMessage = async (owner:string,headers: Headers): Promise<any[]> => {
     const data = {
         "owner": owner
     };
@@ -10,9 +10,7 @@ export const generateMessage = async (owner:string): Promise<any[]> => {
     const req = await axios({
         url: Apis.wGenerateAuthenticationMessageEndpoint,
         method: 'POST',
-        headers: {
-            'secret-key': getSecretKey()
-        },
+        headers: headers,
         data
     })
 

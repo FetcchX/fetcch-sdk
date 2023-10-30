@@ -37,6 +37,6 @@ export const updateAddressbookSchema = z.object({
     signature: z.string(),
 });
 
-export type addressbookMessageSchema = z.infer<typeof addressbookGenerateMessage>;
-export type addressbookSchemaType = z.infer<typeof addressbookSchema>;
-export type updateAddressbookSchemaType = z.infer<typeof updateAddressbookSchema>;
+export type AddressbookMessage = z.infer<typeof addressbookGenerateMessage>;
+export type AddressBook = z.infer<typeof addressbookSchema>;
+export type UpdateAddressbook = z.infer<typeof updateAddressbookSchema>;

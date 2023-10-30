@@ -1,15 +1,15 @@
-import request from "./request";
-import identity from "./identity";
+import Request from "./request";
 import Payments from "./payments";
-import addressBook from "./address-book";
+import Addressbook from "./address-book";
 import { Headers, headersSchema } from "./types";
+import Identity from "./identity";
 
 export default class Fetcch {
   secretKey: string;
-  request = request;
-  identity = identity;
+  request: Request;
+  identity: Identity;
   payments: Payments;
-  addressBook = addressBook;
+  addressBook: Addressbook;
 
   private headers: Headers
   
@@ -23,5 +23,8 @@ export default class Fetcch {
     })
 
     this.payments = new Payments(this.headers)
+    this.addressBook = new Addressbook(this.headers)
+    this.request = new Request(this.headers)
+    this.identity = new Identity(this.headers)
   }
 }

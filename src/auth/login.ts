@@ -1,12 +1,14 @@
 import Apis from "../utils/api-config";
 import axios from "axios";
-import { AuthSchema } from "../types/auth";
+import { Authentication  } from "../types/auth";
+import { Headers } from "../types";
 
-export const login = async (auth: AuthSchema): Promise<any[]> => {
+export const _login = async (auth: Authentication,headers:Headers): Promise<any[]> => {
     const req = await axios({
         url: Apis.wAuthenticationEndpoint,
         method: 'POST',
-        data: auth
+        data: auth,
+        headers: headers
     })
 
     const res = await req.data
