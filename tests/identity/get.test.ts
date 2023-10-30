@@ -6,7 +6,7 @@ describe("module: get-identity", () => {
 
     test("get identity by a handle", async () => {
         try {
-            const ID = await fetcch.identity.get("vpay");
+            const ID = await fetcch.identity.get("v@pay");
             console.log(ID);
             expect(ID).toBeDefined();
 
