@@ -21,7 +21,8 @@ describe("module: generate-message", () => {
                     }
                 ],
                 "owner": "satyam@fetcch"
-            }
+            },
+            "Token"
         );
         expect(message).toBeDefined();
     });
