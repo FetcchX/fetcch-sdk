@@ -4,6 +4,7 @@ import Addressbook from "./address-book";
 import { Headers, headersSchema } from "./types";
 import Identity from "./identity";
 import Auth from "./auth";
+import Sign from "./utils/sign/adapters";
 
 export default class Fetcch {
   secretKey: string;
@@ -12,7 +13,7 @@ export default class Fetcch {
   payments: Payments;
   addressBook: Addressbook;
   auth: Auth;
-
+  sign: Sign;
   private headers: Headers
 
   constructor(secretKey: string) {
@@ -29,5 +30,6 @@ export default class Fetcch {
     this.request = new Request(this.headers)
     this.identity = new Identity(this.headers)
     this.auth = new Auth(this.headers)
+    this.sign = new Sign()
   }
 }
