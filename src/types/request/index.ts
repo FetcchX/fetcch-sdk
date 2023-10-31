@@ -56,7 +56,16 @@ export const MessageSchema = z.object({
     label: z.string(),
 })
 
+export const createRequestSchema = z.object({
+    payer: z.string(),
+    receiver: z.string(),
+    actions: actionsSchema,
+    message: z.string(),
+    label: z.string(),
+    signature: z.string()
+})
 export type PaymentRequest = z.input<typeof requestSchema>
+export type CreateRequest = z.input<typeof createRequestSchema>
 export type Actions = z.input<typeof actionsSchema>
 export type UpdateRequest = z.input<typeof updateRequestSchema>
 export type GenerateMessage = z.input<typeof MessageSchema>

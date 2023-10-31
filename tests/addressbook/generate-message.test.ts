@@ -5,7 +5,6 @@ describe("module: generate-message", () => {
     test("generate message for creating a addressbook", async () => {
         const message = await fetcch.addressBook.generateMessage(
             {
-                "id": 1,
                 "name": "Book 1",
                 "addresses": [
                     {
@@ -20,9 +19,9 @@ describe("module: generate-message", () => {
                         "name": "Sataa"
                     }
                 ],
-                "owner": "satyam@fetcch"
+                "owner": "rujk@pay"
             },
-            "Token"
+
         );
         expect(message).toBeDefined();
     });

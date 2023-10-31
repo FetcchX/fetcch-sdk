@@ -5,14 +5,14 @@ describe("module: create-identity", () => {
 
     test("create identity", async () => {
         const ID = await fetcch.identity.create({
-            "id": "rk@pay",
-            "identifier": "rk",
+            "id": "fujh@pay",
+            "identifier": "fujh",
             "provider": "pay",
             "default": {
-                "address": "0x10D98B111bee373Eef82C2ae301C867bB002A312",
-                "chain": 1,
+                "address": "0x97fcDEe354Ee9494927eAfAfEE283940CD734B85",
+                "chain": 2,
                 "isMultisig": false,
-                "isSmartContractWallet": true
+                "isSmartContractWallet": false
             },
             "secondary": [
                 {
@@ -22,9 +22,9 @@ describe("module: create-identity", () => {
                     "isSmartContractWallet": false
                 }
             ],
-            "currentSignature": "0xe5841fc35297d6c278119e88a2c57ebdf2c8810d21299ccfcf76006214ac05516c173a5bb05f6092702c8ecd73d27fcbe8f136b45fadcd82d253b235b3edbc971b",
+            "currentSignature": "0xd6532b117a76fa69fc89ace0cec91705e0f13563ffb598f64840b0a1bb275d9d0849345cfe8a8a1ec3e247053db05953a1f242c3fd26067dc19cd0fb3e5451981b",
             "extraData": {
-                "signer": "0x10D98B111bee373Eef82C2ae301C867bB002A312"
+                "signer": "0x97fcDEe354Ee9494927eAfAfEE283940CD734B85"
             }
         });
         expect(ID).toBeDefined();

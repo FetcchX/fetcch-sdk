@@ -3,13 +3,11 @@ import Apis from "../utils/api-config";
 import { AddressbookMessage } from "../types/address-book/index";
 import { Headers } from "../types";
 
-export const _generateMessage = async (data: AddressbookMessage, token: string): Promise<any> => {
+export const _generateMessage = async (data: AddressbookMessage, headers: Headers): Promise<any> => {
     const req = await axios({
         url: `${Apis.wAddressBookGenerateMessageEndpoint}`,
         method: "POST",
-        headers: {
-            "Authorization": "Bearer " + token,
-        },
+        headers: headers,
         data
     })
 

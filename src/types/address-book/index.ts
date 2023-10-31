@@ -12,7 +12,6 @@ export const addressBookIdentity = z.object({
 });
 
 export const addressbookGenerateMessage = z.object({
-    id: z.number(),
     name: z.string(),
     addresses: z.array(addresses).optional(),
     identities: z.array(addressBookIdentity).optional(),

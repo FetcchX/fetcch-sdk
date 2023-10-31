@@ -5,14 +5,14 @@ describe("module: generate-message", () => {
     test("generate message for creating a identity", async () => {
         const message = await fetcch.identity.generateMessage(
             {
-                "id": "rk@pay",
-                "identifier": "rk",
+                "id": "fujh@pay",
+                "identifier": "fujh",
                 "provider": "pay",
                 "default": {
-                    "address": "0x10D98B111bee373Eef82C2ae301C867bB002A312",
-                    "chain": 1,
+                    "address": "0x97fcDEe354Ee9494927eAfAfEE283940CD734B85",
+                    "chain": 2,
                     "isMultisig": false,
-                    "isSmartContractWallet": true
+                    "isSmartContractWallet": false
                 },
                 "secondary": [
                     {
