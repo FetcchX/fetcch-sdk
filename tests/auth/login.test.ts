@@ -6,12 +6,12 @@ describe("module: authentication", () => {
         const auth = await fetcch.auth.login(
             {
                 "owner": "fujh@pay",
-                "signature": "0x9c911aed19f21d89059b34b54b09d11a950bce5aaf44419cdaeca56f16c8a5ba47f2bacf57fa21fdec6cb8d8f77ef01e82dd63b80fb35fd0392acaf00a5891fc1c",
+                "signature": "0x69d06443b3e797c5475b73bf56829d3eca411db1d61f6d40e69119e4284739d5087393a485435974fa977c4d2a47bd2d5b30423744ba471a95b218386116203e1b",
                 "smartWallet": {
                     "isSmartContractWallet": false,
                     "chain": 2
                 },
-                "timestamp": 1698748280
+                "timestamp": 1698824171
             });
         console.log(auth);
         expect(auth).toBeDefined();

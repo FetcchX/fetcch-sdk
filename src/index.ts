@@ -16,13 +16,14 @@ export default class Fetcch {
   sign: Sign;
   private headers: Headers
 
-  constructor(secretKey: string) {
+  constructor(secretKey: string, token?: string) {
     this.secretKey = secretKey;
 
     // check validity of secretKey
 
     this.headers = headersSchema.parse({
-      "secret-key": secretKey
+      "secret-key": secretKey,
+      "Authorization": token ? `Bearer ${token}` : undefined
     })
 
     this.payments = new Payments(this.headers)

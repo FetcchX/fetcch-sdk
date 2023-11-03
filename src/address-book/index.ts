@@ -11,8 +11,8 @@ export default class Addressbook {
         this.headers = headers
     }
 
-    get(owner: string, token: String) {
-        return _get(owner, token)
+    get(owner: string) {
+        return _get(owner, this.headers)
     }
 
     generateMessage(data: AddressbookMessage,) {
