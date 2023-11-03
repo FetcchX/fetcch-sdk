@@ -2,11 +2,11 @@ import { _get } from './get'
 import { _create } from './create'
 import { _generateMessage } from './generate-message'
 import { _update } from './update'
-import {Headers} from '../types'
-import {PaymentRequest, UpdateRequest, GenerateMessage} from '../types/request/index'
+import { Headers } from '../types'
+import { CreateRequest, UpdateRequest, GenerateMessage } from '../types/request/index'
 export default class Request {
     private headers: Headers
-    
+
     constructor(headers: Headers) {
         this.headers = headers
     }
@@ -15,7 +15,7 @@ export default class Request {
         return _get(requestId, this.headers)
     }
 
-    create(data: PaymentRequest) {
+    create(data: CreateRequest) {
         return _create(data, this.headers)
     }
 

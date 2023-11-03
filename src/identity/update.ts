@@ -1,11 +1,11 @@
 import axios from "axios";
 import Apis from "../utils/api-config";
-import { AddressbookMessage } from "../types/address-book/index";
+import { UpdateIdentityIntent } from "../types/identity";
 import { Headers } from "../types";
 
-export const _generateMessage = async (data: AddressbookMessage, headers: Headers): Promise<any> => {
+export const _update = async (data: UpdateIdentityIntent, headers: Headers): Promise<any[]> => {
     const req = await axios({
-        url: `${Apis.wAddressBookGenerateMessageEndpoint}`,
+        url: Apis.wGetIdentityEndpoint,
         method: "POST",
         headers: headers,
         data
@@ -14,4 +14,4 @@ export const _generateMessage = async (data: AddressbookMessage, headers: Header
     const res = await req.data
 
     return res.data
-};
+}

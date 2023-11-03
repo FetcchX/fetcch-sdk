@@ -1,6 +1,7 @@
 import Apis from "../utils/api-config";
 import axios from "axios";
 import { Headers } from '../types';
+import { GenericError } from "../types/errors";
 
 export const _get = async (id: string, headers: Headers): Promise<any[]> => {
     const req = await axios({
@@ -10,6 +11,5 @@ export const _get = async (id: string, headers: Headers): Promise<any[]> => {
     })
 
     const res = await req.data
-
     return res.data
 }

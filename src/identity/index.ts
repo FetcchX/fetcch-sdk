@@ -1,12 +1,13 @@
-import {_get} from "./get";
-import {_generateMessage} from "./generate-message";
-import {_create} from "./create";
+import { _get } from "./get";
+import { _generateMessage } from "./generate-message";
+import { _create } from "./create";
 import { Headers } from '../types';
-import {GenerateIdentityMessage, IdentityIntent} from "../types/identity";
+import { _update } from "./update";
+import { GenerateIdentityMessage, IdentityIntent, UpdateIdentityIntent } from "../types/identity";
 export default class Identity {
- 
+
     private headers: Headers
-    
+
     constructor(headers: Headers) {
         this.headers = headers
     }
@@ -20,6 +21,10 @@ export default class Identity {
     }
 
     create(data: IdentityIntent) {
-        return _create(data,this.headers)
+        return _create(data, this.headers)
+    }
+
+    update(data: UpdateIdentityIntent) {
+        return _update(data, this.headers)
     }
 }
